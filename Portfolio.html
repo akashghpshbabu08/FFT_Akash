@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Ghosh | Portfolio</title>
+    <!---Css Style------>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #222;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        /* home section */
+        .home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .home h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .home h1 span {
+            color: #00a8c6;
+        }
+
+        .home p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #00a8c6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            font: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #007f96;
+        }
+
+        /* common section*/
+        section {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /*  My Skills */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 20px 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Projects */
+        .projects {
+            background-color: white;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #f5f7fa;
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #00a8c6;
+        }
+
+        .project-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px;
+            font-size: 17px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .home h1 {
+                font-size: 35px;
+            }
+
+            .home p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h2></h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="home" id="home">
+        <div>
+            <h1>Hello, I'm <span>Akash Ghosh</span></h1>
+            <p> MCA Data Science Student | Web Developer | Python Learner</p>
+            <button type="button" class="btn" onclick="location.href='#projects'"> View My Projects</button>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>
+                I am a postgraduate student interested in Data Science,
+                Web Development and Programming. I enjoy learning new
+                technologies and building practical projects.
+            </p>
+            <p>
+                My goal is to develop strong technical skills and build
+                a successful career in the IT industry.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">React JS</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Data Analysis</div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>A personal portfolio website created using HTML and CSS to showcase my skills and projects.</p>
+                <button type="button" class="btn">View Project</button>
+            </div>
+            <div class="project-card">
+                <h3>Travel Website</h3>
+                <p> A travel website project containing travel packages, destinations and tour information.</p>
+                <button type="button" class="btn">View Project</button>
+            </div>
+            <div class="project-card">
+                <h3>Food Website</h3>
+                <p>A food-related website designed to display food items and services using web technologies.</p>
+                <button type="button" class="btn">View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> gakashMCA26@stu.alliance.edu.in</p>
+        <p><strong>Phone:</strong> +91 79802 69910</p>
+        <p><strong>Location:</strong> Westbengal</p>
+        <br>
+        <button type="button" class="btn" onclick="window.location.href='mailto:akashghoshbabu08@gmail.com'">
+            Contact Me
+        </button>
+    </section>
+    <footer>
+        <p>
+            Akash-Ghosh
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Result Dasbords</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("./image.png");
+            background-position: center;
+            background-size: cover;
+            min-height: 768px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1f2937;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            width: min(500px, 90vw);
+        }
+
+        label {
+            display: inline-block;
+            width: 140px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        input {
+            width: min(240px, 100%);
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button {
+            display: block;
+            margin: 15px auto 0;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #e5b346;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #a47800;
+        }
+
+        #resultDisplay {
+            margin-top: 25px;
+            background: white;
+            width: min(500px, 90vw);
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Student Result Dasbords</h1>
+    <form action="">
+        <label for="">Student Name </label>
+        <input type="text" name="n1" id="i1"><br><br>
+        <label for="">Student Reg</label>
+        <input type="number" name="n2" id="i2"><br><br>
+        <label for="">Html Marks</label>
+        <input type="number" name="n3" id="i3"><br><br>
+        <label for="">Css Marks</label>
+        <input type="number" name="n4" id="i4"><br><br>
+        <label for="">Js Marks</label>
+        <input type="number" name="n5" id="i5"><br><br>
+        <button type="button" onclick="cheack()">Result</button>
+    </form>
+
+    <div id="resultDisplay"></div>
+
+    <script>
+        function cheack() {
+            let n1 = document.getElementById("i1").value;
+            let n2 = document.getElementById("i2").value;
+            let n3 = Number(document.getElementById("i3").value);
+            let n4 = Number(document.getElementById("i4").value);
+            let n5 = Number(document.getElementById("i5").value);
+
+            let total = n3 + n4 + n5;
+            let avg = total / 3;
+            let percentage = (total / 300) * 100;
+            
+            let grade = "";
+
+            if (avg >= 90) {
+                grade = "A";
+            } 
+            else if (avg >= 75) {
+                grade = "B";
+            } 
+            else if (avg >= 60) {
+                grade = "C";
+            } 
+            else if (avg >= 40) {
+                grade = "D";
+            } 
+            else {
+                grade = "F";
+            }
+            
+            let status;
+
+            if (avg >= 40) {
+                status = "Pass";
+            } 
+            else {
+                status = "Fail";
+            }
+            document.getElementById('resultDisplay').innerHTML =
+            "<h2>Student Details</h2>" +
+                "Student Name: " + n1 + "<br>" +
+                "Student Reg: " + n2 + "<br>" +
+                "HTML Marks: " + n3 + "<br>" +
+                "CSS Marks: " + n4 + "<br>" +
+                "JS Marks: " + n5 + "<br>" +
+                "Total Marks: " + total + " / 300<br>" +
+                "Average: " + avg.toFixed(2) + "<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade + "<br>" +
+                "Status: " + status;
+        }
+    </script>
+</body>
+</html>

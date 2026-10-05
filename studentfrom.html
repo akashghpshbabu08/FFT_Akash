@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Form</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      width: 350px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid gray;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 3px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 15px;
+      color: white;
+      border: none;
+    }
+
+    .submit {
+      background-color: green;
+    }
+
+    .reset {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Student Form</h2>
+
+  <form>
+
+    <label>Name</label>
+    <input type="text">
+
+    <label>RGE ID</label>
+    <input type="text">
+
+    <label>Gender</label>
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+
+    <label>DOB</label>
+    <input type="date">
+
+    <label>Phone</label>
+    <input type="tel">
+
+    <label>Address</label>
+    <textarea></textarea>
+
+    <label>Class</label>
+    <select>
+      <option>Class 1</option>
+      <option>Class 2</option>
+      <option>Class 3</option>
+    </select>
+
+    <label>Course</label>
+    <select>
+      <option>BCA</option>
+      <option>B.Sc</option>
+      <option>B.Com</option>
+    </select>
+
+    <br>
+
+    <button type="submit" class="submit">Submit</button>
+    <button type="reset" class="reset">Reset</button>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation */
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #493cff;
+        }
+        /* Event Banner */
+        .banner {
+            background-color: #00475f;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .banner:hover {
+            background-color: #006b88;
+            transform: translateY(-3px);
+        }
+
+        .banner h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 20px;
+        }
+
+        /* Common Section */
+        section {
+            padding: 40px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1327c0;
+        }
+
+        /* Event Details */
+        .details {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .detail-box {
+            background-color: white;
+            padding: 25px;
+            flex: 1 1 220px;
+            width: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .detail-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Schedule */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background: linear-gradient(135deg, #8d3ac9, #5b2d9f);
+            color: white;
+            letter-spacing: 0.04em;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f8f5ff;
+        }
+
+        /* Speakers */
+        .speakers {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .speaker-card {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            width: 30%;
+            min-width: 220px;
+            max-width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(51, 38, 194, 0.18);
+        }
+
+        .speaker-card h3 {
+            margin-bottom: 10px;
+            color: #3326c2;
+        }
+
+        /* Registration */
+        form {
+            background-color: white;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #1340c7;
+            box-shadow: 0 0 0 2px rgba(19, 64, 199, 0.15);
+        }
+
+        button {
+            background-color: #1340c7;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 4px;
+            font: inherit;
+        }
+
+        button:hover {
+            background-color: #0d2d8a;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #00475f;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #dff7ff;
+            color: #003344;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            background-color: #ffffff;
+            color: #00475f;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            background-color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .banner h1 {
+                font-size: 30px;
+            }
+
+            .details {
+                flex-direction: column;
+            }
+
+            .detail-box {
+                flex: 1 1 100%;
+            }
+
+            .speakers {
+                flex-direction: column;
+            }
+
+            .speaker-card {
+                width: 100%;
+                max-width: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: min(100%, 240px);
+                text-align: center;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#details">Event Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Event Banner -->
+    <div class="banner" id="home">
+        <h1>College Tech Fest 2026</h1>
+        <p class="hero-text">
+        A two-day national level technical and cultural fest — coding contests,
+        robotics, hands-on workshops, paper presentations and a live cultural night.
+        Open to students of all departments and colleges.
+      </p>
+      <p class="hero-info">📅 26 September 2026 &nbsp;|&nbsp; 📍 Main Auditorium, Alliance University</p>
+      <div class="hero-buttons">
+        <a href="#register" class="btn">Register Now</a>
+                <a href="#schedule" class="btn btn-outline">View Schedule</a>
+            </div>
+        </div>
+
+
+    <!-- Event Details -->
+    <section id="details">
+        <h2>Event Details</h2>
+
+        <div class="details">
+
+            <div class="detail-box">
+                <h3>Date</h3>
+                <p> 26 September 2026</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Venue</h3>
+                <p>College Auditorium</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Time</h3>
+                <p>9:00 AM - 5:00 PM</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Schedule -->
+    <section id="schedule">
+        <h2>Event Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Venue</th>
+                <th>Speaker</th>
+            </tr>
+
+            <tr>
+                <td>9:00 AM</td>
+                <td>Inauguration</td>
+                <td>Auditorium</td>
+                <td>College Director</td>
+            </tr>
+
+            <tr>
+                <td>10:00 AM</td>
+                <td>Technical Session</td>
+                <td>Seminar Hall</td>
+                <td>Raghuveer Sir</td>
+            </tr>
+
+            <tr>
+                <td>12:00 PM</td>
+                <td>Quiz Competition</td>
+                <td>Room 101</td>
+                <td>Kushal Sir</td>
+            </tr>
+
+            <tr>
+                <td>2:00 PM</td>
+                <td>Hackathon</td>
+                <td>Lab 1</td>
+                <td>SIH Group</td>
+            </tr>
+
+            <tr>
+                <td>4:00 PM</td>
+                <td>Prize Distribution</td>
+                <td>Auditorium</td>
+                <td>Department HOD</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- Speakers -->
+    <section id="speakers">
+        <h2>Our Speakers</h2>
+
+        <div class="speakers">
+
+            <div class="speaker-card">
+                <h3>Durga Sir & Kushal Sir</h3>
+                <p>AI and Machine Learning Expert</p>
+            </div>
+
+            <div class="speaker-card">
+                <h3>Mr. Raghuveer Sir</h3>
+                <p>Software Developer</p>
+            </div>
+
+            <div class="speaker-card">
+                <h3>Mr. Ajit Sir</h3>
+                <p>Technology Entrepreneur</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Registration -->
+    <section id="register">
+        <h2>Registration Form</h2>
+
+        <form action="#contact" method="post">
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone No:</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your number" required>
+
+            <label for="registration-id">Reg Id:</label>
+            <input id="registration-id" name="registration_id" type="text" placeholder="Enter your Registration Id" required>
+
+            <label for="college">College Name:</label>
+            <input id="college" name="college" type="text" placeholder="Enter your College" required>
+
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="" selected disabled>Select course</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="BBA">BBA</option>
+                <option value="MBA">MBA</option>
+            </select>
+
+            <label for="question">Any Question:</label>
+            <textarea id="question" name="question" rows="4" placeholder="Any industry views point want to ask"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+        <p>Email: allianceuniversity@stu.edu.in</p>
+        <p>Phone: 7980xxxxxx</p>
+        <p>College Auditorium, Bengaluru</p>
+    </section>
+
+</body>
+</html>
